@@ -1,7 +1,10 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import s from './Product.module.scss';
 import { Container } from '@/app/shared/components/Container/Container';
+import axios from 'axios';
+import { AxiosInterceptor } from '@/app/core/http';
 
 interface IProductProps {
   title: string;
@@ -77,8 +80,19 @@ const products: IProductProps[] = [
   },
 ];
 
-export const Product = () => {
-  return (
+
+export const Product = () => {  
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  const getData = async () => {
+    const data = await AxiosInterceptor.$get('/posts')
+    console.log(data);
+  }
+
+  return (  
     <Container>
       <div className={s.Product}>
         {products.map(i => (
