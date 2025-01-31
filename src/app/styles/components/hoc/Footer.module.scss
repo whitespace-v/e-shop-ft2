@@ -1,0 +1,52 @@
+.footer {
+  background-color: rgb(0, 0, 0);
+  height: 504px;
+  padding: 104px 160px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 256px;
+  }
+
+  &__info {
+    gap: 24px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 173px;
+    height: 16px;
+  }
+
+  &__subtitle {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-abel);
+    font-size: 16px;
+  }
+
+  &__text {
+    color: #cfcfcf;
+    font-family: var(--font-abel);
+    font-size: 14px;
+    line-height: 32px;
+  }
+
+  &__text_italic {
+    color: #cfcfcf;
+    font-family: var(--font-abeezee-regular);
+    font-style: italic;
+    width: 384px;
+    height: 48px;
+    font-size: 14px;
+    line-height: 23.87px;
+  }
+  
+}
