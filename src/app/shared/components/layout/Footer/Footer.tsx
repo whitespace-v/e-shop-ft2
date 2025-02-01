@@ -2,7 +2,7 @@ import s from './Footer.module.scss';
 import { Container } from '@/app/shared/components/Container/Container';
 import { Logo } from '@/app/shared/icons/Logo';
 import Link from 'next/link';
-import { columns, iconsArray } from '@/app/components/layout/Footer/footer_data';
+import { columns, iconsArray } from './footer_data';
 const Footer = () => {
   return (
     <footer className={s.footer}>

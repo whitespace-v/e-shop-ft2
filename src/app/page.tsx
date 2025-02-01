@@ -1,14 +1,14 @@
-import Image from 'next/image';
-import styles from './page.module.css';
-import HomeCategories from './components/HomeCategories/HomeCategories';
-import { Product } from './components/layout/Product/Product';
+import HomeCategories from './components/Home/HomeCategories/HomeCategories';
 import { AxiosInterceptor } from './core/http';
+import { Product } from './shared/components/layout/Product/Product';
 
 export default function Home() {
-  new AxiosInterceptor()
+  new AxiosInterceptor();
 
-  return <div>
-    <HomeCategories/>
-    <Product/>
-  </div>;
+  return (
+    <div>
+      <HomeCategories />
+      <Product />
+    </div>
+  );
 }
