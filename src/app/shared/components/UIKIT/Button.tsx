@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import s from '../../styles/components/UIKIT/Button.module.scss';
+import s from './Button.module.scss';
 import classNames from 'classnames/bind';
 
 interface ButtonProps {

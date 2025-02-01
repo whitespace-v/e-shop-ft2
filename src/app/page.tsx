@@ -1,6 +1,6 @@
 import HomeCategories from './components/Home/HomeCategories/HomeCategories';
+import { HomeListProduct } from './components/Home/HomeListProducts/HomeListProducts';
 import { AxiosInterceptor } from './core/http';
-import { Product } from './shared/components/layout/Product/Product';
 
 export default function Home() {
   new AxiosInterceptor();
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <HomeCategories />
-      <Product />
+      <HomeListProduct />
     </div>
   );
 }
