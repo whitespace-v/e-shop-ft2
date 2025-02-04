@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { ABeeZee, Geist, Geist_Mono } from 'next/font/google';
 import './shared/styles/globals.scss';
 import Header from './shared/components/layout/Header/Header';
 import Footer from './shared/components/layout/Footer/Footer';
@@ -8,6 +8,12 @@ const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 });
+
+const abeezee = ABeeZee({
+  weight: ["400"],
+  style: ['normal'],
+  variable: '--font-abeezee'
+})
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
@@ -26,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${abeezee.variable}`}>
         <Header />
         {children}
         <Footer />

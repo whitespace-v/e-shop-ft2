@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import s from '../../styles/components/home/Grid.module.scss';
-import Button from '../UIKIT/Button';
+import s from '../HomeGrid/HomeGrid.module.scss';
+import Button from '../../../shared/components/UIKIT/Button';
 
 const HomeGrid = () => {
   return (

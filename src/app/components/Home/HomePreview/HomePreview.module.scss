@@ -5,12 +5,11 @@
   &__card {
     display: flex;
     flex-direction: column;
-    min-width: 360px;
     height: 640px;
     padding: 0px 32px 56px 32px;
     gap: 24px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 
     &_title {
       font-size: 33px;
@@ -30,7 +29,6 @@
     }
 
     &_image {
-      padding: ;
       object-fit: cover;
     }
 

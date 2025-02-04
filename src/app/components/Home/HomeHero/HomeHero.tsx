@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import s from '../../styles/components/home/Hero.module.scss';
-import Button from '../UIKIT/Button';
+import s from '../HomeHero/HomeHero.module.scss';
+import Button from '../../../shared/components/UIKIT/Button';
 
 const HomeHero = () => {
   return (
@@ -17,7 +17,7 @@ const HomeHero = () => {
         className={s.Hero__image}
         width={406}
         height={632}
-        src={'/routes/index/hero/Iphone.png'}
+        src={'/home/hero/Iphone.png'}
         alt="IPhone"
       ></Image>
     </div>

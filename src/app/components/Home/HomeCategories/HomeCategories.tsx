@@ -1,5 +1,5 @@
 import { Arrow } from '@/app/shared/icons/Arrow';
-import s from './HomeCategories.module.scss';
+import s from '../HomeCategories/HomeCategories.module.scss';
 import { Container } from '@/app/shared/components/Container/Container';
 import { Phone } from '@/app/shared/icons/Phone';
 import { Watches } from '@/app/shared/icons/Watches';
