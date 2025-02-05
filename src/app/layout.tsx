@@ -3,6 +3,7 @@ import { ABeeZee, Geist, Geist_Mono } from 'next/font/google';
 import './shared/styles/globals.scss';
 import Header from './shared/components/layout/Header/Header';
 import Footer from './shared/components/layout/Footer/Footer';
+import { FavoriteStoreProvider } from './core/providers/favoriteProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,9 +34,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${geistSans.variable} ${geistMono.variable} ${abeezee.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <FavoriteStoreProvider>
+          <Header />
+          {children}
+          <Footer />
+        </FavoriteStoreProvider>
       </body>
     </html>
   );

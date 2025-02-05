@@ -6,18 +6,20 @@ import { AxiosInterceptor } from '@/app/core/http';
 import { Product } from '@/app/shared/components/layout/Product/Product';
 import { homeListContent } from './homeListProductsData';
 import classNames from 'classnames';
+import { useFavoriteStore } from '@/app/core/providers/favoriteProvider';
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+  // const getData = async () => {
+  //   const data = await AxiosInterceptor.$get('/posts');
+  //   console.log(data);
+  // };
 
 export const HomeListProduct = () => {
   const [currentCategory, setCurrentCategory] = useState<number>(0);
   const cx = classNames.bind(s);
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = async () => {
-    const data = await AxiosInterceptor.$get('/posts');
-    console.log(data);
-  };
 
   return (
     <Container>
