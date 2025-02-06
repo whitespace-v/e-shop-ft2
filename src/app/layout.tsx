@@ -4,6 +4,7 @@ import './shared/styles/globals.scss';
 import Header from './shared/components/layout/Header/Header';
 import Footer from './shared/components/layout/Footer/Footer';
 import { FavoriteStoreProvider } from './core/providers/favoriteProvider';
+import { BasketStoreProvider } from './core/providers/basketProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -35,9 +36,11 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${geistSans.variable} ${geistMono.variable} ${abeezee.variable}`}>
         <FavoriteStoreProvider>
-          <Header />
-          {children}
-          <Footer />
+          <BasketStoreProvider>
+            <Header />
+            {children}
+            <Footer />
+          </BasketStoreProvider>
         </FavoriteStoreProvider>
       </body>
     </html>
