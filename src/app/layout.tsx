@@ -5,6 +5,7 @@ import Header from './shared/components/layout/Header/Header';
 import Footer from './shared/components/layout/Footer/Footer';
 import { FavoriteStoreProvider } from './core/providers/favoriteProvider';
 import { BasketStoreProvider } from './core/providers/basketProvider';
+import { DislikeStoreProvider } from './core/providers/dislikeProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -12,10 +13,10 @@ const geistSans = Geist({
 });
 
 const abeezee = ABeeZee({
-  weight: ["400"],
+  weight: ['400'],
   style: ['normal'],
-  variable: '--font-abeezee'
-})
+  variable: '--font-abeezee',
+});
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
@@ -35,13 +36,16 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${geistSans.variable} ${geistMono.variable} ${abeezee.variable}`}>
-        <FavoriteStoreProvider>
-          <BasketStoreProvider>
-            <Header />
-            {children}
-            <Footer />
-          </BasketStoreProvider>
-        </FavoriteStoreProvider>
+        <DislikeStoreProvider>
+          <FavoriteStoreProvider>
+            {/* Все что внутри - имеет доступ к данным провайдера */}
+            <BasketStoreProvider>
+              <Header />
+              {children}
+              <Footer />
+            </BasketStoreProvider>
+          </FavoriteStoreProvider>
+        </DislikeStoreProvider>
       </body>
     </html>
   );

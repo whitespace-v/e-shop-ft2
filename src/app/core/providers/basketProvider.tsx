@@ -1,28 +1,37 @@
-'use client'
-import { createContext, ReactNode, useContext, useRef } from "react"
-import { BasketStore, createBasketStore, initBasketStore } from "../store/basketStore"
-import { useStore } from "zustand"
+'use client';
+import { createContext, ReactNode, useContext, useRef } from 'react';
+import { BasketStore, createBasketStore, initBasketStore } from '../store/basketStore';
+import { useStore } from 'zustand';
 
-export type BasketStoreApi = ReturnType<typeof createBasketStore>
+// типизация
+export type BasketStoreApi = ReturnType<typeof createBasketStore>;
 
-export const BasketStoreContext = createContext<BasketStoreApi | undefined>(undefined)
+// контекст с данными
+export const BasketStoreContext = createContext<BasketStoreApi | undefined>(undefined);
 
-export interface BasketStoreProviderProps {
-    children: ReactNode;
-}
-export const BasketStoreProvider = ({children}: BasketStoreProviderProps) => {
-    const storeRef = useRef<BasketStoreApi>(undefined)
-    if (!storeRef.current){
-        storeRef.current = createBasketStore(initBasketStore())
-    }
-    return <BasketStoreContext.Provider value={storeRef.current}> {children} </BasketStoreContext.Provider>
-}
+// Провайдер
+export const BasketStoreProvider = ({ children }: { children: ReactNode }) => {
+  //storeRef - ссылка
+  const storeRef = useRef<BasketStoreApi>(undefined);
+  // если стора нет - создаем
+  if (!storeRef.current) {
+    // storeRef.current -> значения, там у нас хранится стор
+    // Стор: 1. Инициализация. 2. Создание
+    storeRef.current = createBasketStore(initBasketStore());
+  }
+  // возвращение компонента
+  return <BasketStoreContext.Provider value={storeRef.current}> {children} </BasketStoreContext.Provider>;
+};
 
+// Хук для использования стора
+// дженерики
 export const useBasketStore = <T,>(selector: (store: BasketStore) => T): T => {
-    const basketStoreContext = useContext(BasketStoreContext);
+  // контекст для хранения
+  const storeContext = useContext(BasketStoreContext);
 
-    if (!basketStoreContext) {
-      throw new Error(`useBasketStore must be used within BasketStoreProvider`);
-    }
-    return useStore(basketStoreContext, selector);
-  };
+  // для инициализации
+  if (!storeContext) {
+    throw new Error(`useBasketStore must be used within BasketStoreProvider`);
+  }
+  return useStore(storeContext, selector);
+};
