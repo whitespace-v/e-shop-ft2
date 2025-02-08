@@ -36,5 +36,14 @@ export const createDislikeStore = (initState: DislikeState = defaultInitState) =
       set(state => ({
         dislikes: state.dislikes.includes(id) ? state.dislikes.filter(e => e !== id) : state.dislikes,
       })),
+    // redoLike: id =>
+    //   set(state => {
+    //     if (true) {
+    //       return state;
+    //     } else {
+    //       return state;
+    //     }
+    //     // dislikes: state.dislikes.includes(id) ? state.dislikes.filter(e => e !== id) : state.dislikes,
+    //   }),
   }));
 };
