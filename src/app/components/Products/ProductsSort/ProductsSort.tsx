@@ -1,6 +1,6 @@
 'use client';
 import { ISortItem } from '@/app/(routes)/products/page';
-import Checkbox from '@/app/shared/components/UIKIT/Checkbox';
+import Checkbox from '@/app/shared/components/UIKIT/Checkbox/Checkbox';
 import React, { useState } from 'react';
 import s from './ProductsSort.module.scss';
 import cn from 'classnames';

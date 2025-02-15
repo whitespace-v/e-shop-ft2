@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import s from '../HomeHero/HomeHero.module.scss';
-import Button from '../../../shared/components/UIKIT/Button';
+import Button from '../../../shared/components/UIKIT/Button/Button';
 
 const HomeHero = () => {
   return (
@@ -13,13 +13,7 @@ const HomeHero = () => {
           Shop now
         </Button>
       </div>
-      <Image
-        className={s.Hero__image}
-        width={406}
-        height={632}
-        src={'/home/hero/Iphone.png'}
-        alt="IPhone"
-      ></Image>
+      <Image className={s.Hero__image} width={406} height={632} src={'/home/hero/Iphone.png'} alt="IPhone"></Image>
     </div>
   );
 };

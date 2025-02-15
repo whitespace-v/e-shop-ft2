@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import s from './Product.module.scss';
 import { IProduct } from '@/app/shared/models/IProduct';
-import Button from '../../UIKIT/Button';
+import Button from '../../UIKIT/Button/Button';
 import { useFavoriteStore } from '@/app/core/providers/favoriteProvider';
 import { useBasketStore } from '@/app/core/providers/basketProvider';
 import { useDislikeStore } from '@/app/core/providers/dislikeProvider';

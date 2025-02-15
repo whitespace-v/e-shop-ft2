@@ -3,7 +3,6 @@ import { FC } from 'react';
 type Icon = { className: string };
 
 export const Search: FC<Icon> = ({ className }) => {
-  console.log(className);
   return (
     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" className={className}>
       <path

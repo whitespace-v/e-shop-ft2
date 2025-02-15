@@ -1,5 +1,5 @@
 import s from '../HomePreview/HomePreview.module.scss';
-import Button from '../../../shared/components/UIKIT/Button';
+import Button from '../../../shared/components/UIKIT/Button/Button';
 
 import i1 from '@/../public/home/preview/Popular.png';
 import i2 from '@/../public/home/preview/Ipad.png';

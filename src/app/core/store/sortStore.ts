@@ -7,7 +7,8 @@ export type SortState = {
   screen_diagonal: number[];
   protection_class: number[];
   built_in_memory: number[];
-  // 
+  query: string;
+  order: number;
   // зазор
   offset: number;
   // страница
@@ -23,6 +24,8 @@ export type SortActions = {
   screelDiagonalAction: (id: number) => void;
   protectionClassAction: (id: number) => void;
   builtInMemoryAction: (id: number) => void;
+  queryAction: (q: string) => void;
+  orderAction: (id: number) => void;
   changePage: (p: number) => void;
 };
 
@@ -35,6 +38,8 @@ export const defaultInitState: SortState = {
   screen_diagonal: [],
   protection_class: [],
   built_in_memory: [],
+  order: 0,
+  query: '',
   offset: 0,
   page: 1,
   limit: 9,
@@ -85,6 +90,14 @@ export const createSortStore = (initState: SortState = defaultInitState) => {
         built_in_memory: state.built_in_memory.includes(id)
           ? state.built_in_memory.filter(e => e !== id)
           : state.built_in_memory.concat(id),
+      })),
+    queryAction: query =>
+      set(() => ({
+        query,
+      })),
+    orderAction: order =>
+      set(() => ({
+        order,
       })),
   }));
 };

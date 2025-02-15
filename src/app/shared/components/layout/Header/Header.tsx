@@ -5,10 +5,25 @@ import { Logo } from '@/app/shared/icons/Logo';
 import { WishList } from '@/app/shared/icons/WishList';
 import { Cart } from '@/app/shared/icons/Cart';
 import cn from 'classnames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Search } from '@/app/shared/icons/Search';
+import { useSortStore } from '@/app/core/providers/sortProvider';
+import { useDebounceCallback } from '@/app/shared/hooks/useDebounceCallback';
+
 const Header = () => {
   const [isActiveInput, setIsActiveInput] = useState<boolean>(false);
+  const { queryAction, query } = useSortStore(state => state);
+
+  const debounced = useDebounceCallback(queryAction, 500);
+
+  useEffect(() => {
+    console.log(query);
+  }, [query]);
+
+  const queryHandler = (q: string) => {
+    if (q.length > 3) debounced(q);
+  };
+
   return (
     <header className={s.header}>
       <Container>
@@ -18,6 +33,7 @@ const Header = () => {
             <div className={s.search__wrapper}>
               <Search className={cn(s.search__icon, isActiveInput && s.search__icon_active)} />
               <input
+                onChange={e => queryHandler(e.currentTarget.value.trim())}
                 onFocus={() => setIsActiveInput(true)}
                 onBlur={() => setIsActiveInput(false)}
                 type="text"
