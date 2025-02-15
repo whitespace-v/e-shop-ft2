@@ -37,7 +37,10 @@ export default function ProductsSort({
         <div className={s.ProductsSort__content}>
           {items.map((i, idx) => (
             <div key={idx} className={s.ProductsSort__content__item}>
-              <Checkbox handler={() => handler(i.id)} active={activeItems.includes(i.id)} />
+              <Checkbox 
+                handler={() => handler(i.id)} 
+                active={activeItems.includes(i.id)} 
+              />
               <div className={s.ProductsSort__content__item__title}>{i.title}</div>
               <div className={s.ProductsSort__content__item__count}>{i.count}</div>
             </div>

@@ -43,8 +43,17 @@ export default function Page() {
       count: 6,
     },
   ];
+
   useEffect(() => {
     console.log(brand, battery_capacity, screen_type, screen_diagonal, protection_class, built_in_memory);
+    // axios.get('/products', {
+    //   brand,
+    //   battery_capacity,
+    //   screen_type,
+    //   screen_diagonal,
+    //   protection_class,
+    //   built_in_memory,
+    // });
   }, [brand, battery_capacity, screen_type, screen_diagonal, protection_class, built_in_memory]);
 
   return (

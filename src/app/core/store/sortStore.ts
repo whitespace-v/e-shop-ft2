@@ -7,6 +7,7 @@ export type SortState = {
   screen_diagonal: number[];
   protection_class: number[];
   built_in_memory: number[];
+  // 
   // зазор
   offset: number;
   // страница
