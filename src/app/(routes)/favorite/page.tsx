@@ -1,4 +1,5 @@
-import Footer from '@/app/components/layout/Footer/Footer';
+import Footer from '@/app/shared/components/layout/Footer/Footer';
+
 export default function Favorite() {
   return (
     <div>
